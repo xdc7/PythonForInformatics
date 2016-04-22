@@ -10,9 +10,11 @@ for line in fh:
     if line.startswith("From "):
         words = line.split()
         day = words[2]
-        if day not in dayCount:
-            dayCount[day] = 1
-        else:
-            dayCount[day] += 1
+        dayCount[day] = dayCount.get(day,0) + 1
+        #The above code is a short way of doing what the commented code below is doing
+        # if day not in dayCount:
+        #     dayCount[day] = 1
+        # else:
+        #     dayCount[day] += 1
 
 print(dayCount)
