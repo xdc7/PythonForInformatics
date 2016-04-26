@@ -26,5 +26,12 @@ for line in fh:
         else:
             wordDict[word] += 1
 print(string.punctuation)
+print("=======Printing the dictionary sorted alphabetically")
 printSortedDictionary(wordDict)
-
+print("=======Printing the dictionary sorted with the most common words first")
+ls = []
+for key, val in wordDict.items():
+    ls.append((val,key))
+ls.sort(reverse=True)
+for w in ls:
+    print(w)
